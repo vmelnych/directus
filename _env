@@ -1,0 +1,80 @@
+#All variables are documented here: https://docs.directus.io/reference/environment-variables.html
+
+#Project Location
+APP_FOLDER=/etc/directus
+
+#What level of detail to log. One of `fatal`, `error`, `warn`, `info`, `debug`, `trace` or `silent`. Default: `info`
+LOG_LEVEL=info
+
+#file storage
+STORAGE_LOCATIONS=local
+#STORAGE_LOCAL_PUBLIC_URL=/data/uploads
+STORAGE_LOCAL_DRIVER=local
+STORAGE_LOCAL_ROOT=/uploads
+
+#file storage location on host server
+HOST_UPLOADS=/etc/directus/data/uploads
+
+#What external port to expose the app
+DIR_PORT=8055
+
+#Unique identifier for the project
+DIR_KEY=
+
+#Secret string for the project. Generated on installation
+DIR_SECRET=
+
+##Postgre Admin
+PGADMIN_EMAIL=pgadmin@yourdomain.com
+PGADMIN_PASSWORD="@@@"
+PGADMIN_LOCATION=/etc/directus/data/pgadmin
+PGADMIN_PORT=6001
+
+
+##Directus database
+#Location where the database files are going to be stored, you may want to change the folder name
+DB_LOCATION=/etc/directus/data/pgdb
+
+#What database client to use. One of `pg` or `postgres`, `mysql`, `mysql2`, `oracledb`, `mssql`, or `sqlite3`
+#For all database clients except SQLite, you will also need to configure the following variables
+DB_CLIENT=pg
+
+#When using Postgres, you can submit a connection string instead of individual properties. Using this will ignore any of the other connection settings
+#DB_CONNECTION_STRING=
+
+#Database host. Required when using `pg`, `mysql`, `mysql2`, `oracledb`, or `mssql`
+DB_HOST=database
+
+#Database port. Required when using `pg`, `mysql`, `mysql2`, `oracledb`, or `mssql`
+DB_PORT=5432
+
+#Database name. Required when using `pg`, `mysql`, `mysql2`, `oracledb`, or `mssql`
+DB_DATABASE=app_name
+
+#Database user. Required when using `pg`, `mysql`, `mysql2`, `oracledb`, or `mssql`
+DB_USER=app_dba
+
+#Database user password. Required when using `pg`, `mysql`, `mysql2`, `oracledb`, or `mssql`
+DB_PASSWORD="@@@"
+
+#Where to read/write the SQLite database. Required when using `sqlite3`
+#DB_FILENAME=
+
+##CACHE
+#Whether or not caching is enabled. Default = false
+CACHE_ENABLED=false
+
+#Where to store the cache data. Either `memory`, `redis`, or `memcache`. Based on the cache used, you must also provide the following configurations. Default: `memory`
+CACHE_STORE=redis
+
+#Redis port for the connection string (eg: redis://:authpassword@127.0.0.1:6380/4)
+REDIS_PORT=6379
+
+##Email
+#application admin
+ADMIN_EMAIL=admin@yourdomain.com
+ADMIN_PASSWORD="@@@"
+
+##Docker network
+#network name
+NETWORK=directus
