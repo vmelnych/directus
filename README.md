@@ -28,12 +28,12 @@ GQL is a powerful query language for the GraphQL API endpoint:
     - `mysecretpass` - personal user token, defined by the admin in a user profile
 
 
-Get all records from the collection `customers` where field `mymbs_id` is equal to "3453676575676":
+Get all records from the collection `customers` where field `rec_id` is equal to "3453676575676":
 ```gql
 query {
-  customers (filter: { mymbs_id: { _eq: "3453676575676" } })
+  customers (filter: { rec_id: { _eq: "3453676575676" } })
   {
-    	mymbs_id
+    	rec_id
     	kyc_level
   }
 }
@@ -44,7 +44,7 @@ search the collection `customers` for any field matching the value "435":
 query {
   customers (search: "435")
   {
-    	mymbs_id
+    	rec_id
     	kyc_level
   }
 }
@@ -55,7 +55,7 @@ get the record from the collection `customers` where the id field is "1":
 query {
   customers_by_id (id: 1)
   {
-    	mymbs_id
+    	rec_id
     	kyc_level
   }
 }
@@ -67,7 +67,7 @@ query {
   customers_by_id (id: 1)
   {
     	id
-    	mymbs_id
+    	rec_id
     	kyc_level
     	branch_id {branch_name}
   }
